@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/oracle" auth="Container"
+			type="javax.sql.DataSource"
+			driverClassName="oracle.jdbc.OracleDriver"
+			url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+			username="jsp" password="jsp"
+			maxTotal="20" maxIdle="10"
+			maxWaitMillis="-1"/>
+			<!-- maxWaitMillis -1은 무한대기. maxtotal은 총 접속 가능 -->
+			<!-- 이 파일은 META-INF안에거나 톰캣안에 넣어둬야한다.이렇게 2개 쓰면 40개를 할당 따로따로 해놓고 쓰는거
+			아이디랑 비번은 딴거 써야함 -->
+</Context>
