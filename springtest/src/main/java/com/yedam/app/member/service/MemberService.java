@@ -9,7 +9,7 @@ import com.yedam.app.member.MemberVO;
 public interface MemberService {
 
 	//전체조회
-	ArrayList<MemberVO> selectAll();
+	List<MemberVO> selectAll();
 	
 	//단건조회
 	MemberVO selectOne(MemberVO memberVo);

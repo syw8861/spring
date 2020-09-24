@@ -131,6 +131,20 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<!-- Mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+
+
 
 
 		<!-- @Inject -->
@@ -167,7 +181,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Jackson 메이븐 lib-->
+		<!-- Jackson 메이븐 lib -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>

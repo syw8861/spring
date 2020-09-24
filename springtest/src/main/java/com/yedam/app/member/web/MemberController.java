@@ -1,6 +1,6 @@
 package com.yedam.app.member.web;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,6 +56,8 @@ public class MemberController {
 		return "member/memberInsert";
 	}
 	
+	
+	
 	@RequestMapping(value="/memberInsert", method=RequestMethod.POST)
 	public String memberInsert(MemberVO memberVO) {
 //		MemberVO vo = new ~~
@@ -66,6 +68,8 @@ public class MemberController {
 		//default가 forward고 redirect넣어주면 저거 됨
 	}
 	
+	
+	
 	//경로명에 변수가 포함 (PathVariable사용)
 	@RequestMapping("/userSelectPath/{id}")
 	public String userSelectPath(Model model, @PathVariable String id) { //REquestMapping에 path에 마지막id에 값이 패스에 담기고
@@ -74,6 +78,8 @@ public class MemberController {
 		model.addAttribute("member", memberService.selectOne(vo));
 		return "member/memberSelect";
 	}
+	
+	
 	
 	//파라미터를 map에 담아서 보기
 	@RequestMapping("/userSelectMap")
@@ -85,10 +91,19 @@ public class MemberController {
 	
 	@RequestMapping("/memberListAjax")
 	@ResponseBody
-	public ArrayList<MemberVO> memberListAjax() {
+	public List<MemberVO> memberListAjax() {
 		
 		//회원조회
 		return memberService.selectAll();
 	}
+	
+	
+	@RequestMapping("/memberSelectAjax")
+	@ResponseBody
+	public MemberVO memberSelectAjax(MemberVO memberVO) {
+		//회원조회
+		return memberService.selectOne(memberVO);
+	}
+	
 	
 }

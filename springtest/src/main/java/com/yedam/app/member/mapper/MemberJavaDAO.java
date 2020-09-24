@@ -35,7 +35,7 @@ public class MemberJavaDAO implements MemberDAO {
 	
 	//전체조회
 		@Override
-		public ArrayList<MemberVO> selectAll() {
+		public List<MemberVO> selectAll() {
 			ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 			
 			rs = null;
@@ -46,7 +46,7 @@ public class MemberJavaDAO implements MemberDAO {
 				psmt = conn.prepareStatement(sql);
 				rs  = psmt.executeQuery();
 				while(rs.next()) {
-					rsAll = MemberVO.builder().build();
+					rsAll = new MemberVO();
 					rsAll.setId(rs.getString(1));
 					rsAll.setPw(rs.getString(2));
 					rsAll.setJob(rs.getString(3));
@@ -78,7 +78,7 @@ public class MemberJavaDAO implements MemberDAO {
 				psmt.setString(1, memberVo.getId());
 				rs  = psmt.executeQuery();
 				while(rs.next()) {
-					rsOne = MemberVO.builder().build();
+					rsOne = new MemberVO();
 					rsOne.setId(rs.getString(1));
 					rsOne.setPw(rs.getString(2));
 					rsOne.setJob(rs.getString(3));
@@ -219,6 +219,15 @@ public class MemberJavaDAO implements MemberDAO {
 			}
 			
 			return list; 
+		}
+
+
+
+
+		@Override
+		public ArrayList<MemberVO> selectOneSel(MemberVO MemberVO) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 		
 }

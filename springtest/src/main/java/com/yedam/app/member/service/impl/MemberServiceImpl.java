@@ -19,7 +19,7 @@ public class MemberServiceImpl implements MemberService {
 	//@Autowired BoardDAO boardDAO; 이건 안만들어둔건데 이런식으로 여러가지의 DAO를 불러와서 
 	
 	@Override
-	public ArrayList<MemberVO> selectAll() {
+	public List<MemberVO> selectAll() {
 		return memberDAO.selectAll();
 	}
 

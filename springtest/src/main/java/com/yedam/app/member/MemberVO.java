@@ -1,8 +1,8 @@
 package com.yedam.app.member;
 
-import lombok.Builder;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Data
 public class MemberVO {

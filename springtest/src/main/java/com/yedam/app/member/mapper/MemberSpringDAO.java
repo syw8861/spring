@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.yedam.app.member.MemberVO;
 
-@Component
+//@Component
 public class MemberSpringDAO implements MemberDAO{
 	final static String INSERT_MEMBER = "insert into member(id, pw, job, gender, reason, mailyn, hobby, regdate) values(?,?,?,?,?,?,?, sysdate)";
 	final static String DELETE_MEMBER = "delete member where id = ?";
@@ -43,8 +43,8 @@ public class MemberSpringDAO implements MemberDAO{
 	
 	
 	@Override
-	public ArrayList<MemberVO> selectAll() {
-		return (ArrayList<MemberVO>)template.query(SELECT_ALL_MEMBER, new MemberRowMapper());
+	public List<MemberVO> selectAll() {
+		return (List<MemberVO>)template.query(SELECT_ALL_MEMBER, new MemberRowMapper());
 	}
 
 	
@@ -86,5 +86,11 @@ public class MemberSpringDAO implements MemberDAO{
 		}//end of class mapRow
 		
 	}//end of class MemberRowMapper
+
+	@Override
+	public ArrayList<MemberVO> selectOneSel(MemberVO MemberVO) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }//end of class MemberSpringDAO
