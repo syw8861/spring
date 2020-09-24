@@ -9,7 +9,7 @@
 
 	<!--<bean name="tv" class="com.yedam.app.ioc.LgTV"/> lgtv값이 나옴 -->
 <context:component-scan	base-package="com.yedam.app" /> 
-	<bean name="sony" class="com.yedam.app.ioc.SonySpeaker"	scope="singleton" />
+	<!--  <bean name="sony" class="com.yedam.app.ioc.SonySpeaker"	scope="singleton" /> -->
 
 	<!-- <bean name="sony" class="com.yedam.app.ioc.SonySpeaker"/> <bean name="apple" 
 		class="com.yedam.app.ioc.AppleSpeaker"/> <bean name="tv" class="com.yedam.app.ioc.LgTV"> 
@@ -17,7 +17,11 @@
 	
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 	
-	<bean id="logAdvice" class="com.yedam.app.aop.LogAdvice"></bean>
+	
+	
+	
+	<!-- annotation실행해보기 위해서 주석으로 막아둠 -->
+	<!-- <bean id="logAdvice" class="com.yedam.app.aop.LogAdvice"></bean>
 	<bean id="afterAdvice" class="com.yedam.app.aop.AfterReturningAdvice"></bean>
 	
 	<aop:config>
@@ -34,8 +38,11 @@
 		
 		<aop:aspect ref="afterAdvice">
 			<aop:after-returning method="afterLog" pointcut-ref="selectPointcut"
-								 returning="returnObj"/> <!-- 리터닝에는 매게값 afterreturnmingAdvice클래스에  -->
+								 returning="returnObj"/> 리터닝에는 매게값 afterreturnmingAdvice클래스에 
 		</aop:aspect>
 		
-	</aop:config>
+	</aop:config> 
+	-->
+	
+	
 </beans>

@@ -1,4 +1,4 @@
-package com.yedam.app.member;
+package com.yedam.app.member.mapper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,19 +12,20 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.dev.common.ConnectionManager;
+import com.yedam.app.member.MemberVO;
 
-@Component
-public class MemberDAO implements DAO {
+//@Component 스프링 컨테이너가 관리하도록 빈등록
+public class MemberJavaDAO implements MemberDAO {
 	Connection conn = null;
 	PreparedStatement psmt;
 	ResultSet rs;
 	
 	//싱글톤 (한번 만들어놓고 객체를 불러와서 쓰는방식) ****중요함*****
 	//싱글톤= Date나 Calendar이런것들도 싱글톤으로 불러와서 쓰는 방식이다.
-	static DAO instance;
-	public static DAO getInstance() {
+	static MemberDAO instance;
+	public static MemberDAO getInstance() {
 		if(instance==null) {
-			instance=new MemberDAO();
+			instance=new MemberJavaDAO();
 		}
 		return instance;
 	}
@@ -34,7 +35,7 @@ public class MemberDAO implements DAO {
 	
 	//전체조회
 		@Override
-		public ArrayList<MemberVO> selectAll(MemberVO memberVo) {
+		public ArrayList<MemberVO> selectAll() {
 			ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 			
 			rs = null;

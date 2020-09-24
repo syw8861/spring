@@ -2,9 +2,9 @@ package com.yedam.app.member;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 public class MemberVO {
 
 	private String id;
@@ -15,6 +15,7 @@ public class MemberVO {
 	private String mailyn;
 	private String hobby;
 	private String regdate;
+	
 	
 }
 
